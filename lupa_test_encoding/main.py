@@ -10,11 +10,16 @@ g = runtime.globals()
 setattr(g, "pprint", python_print)
 
 code = """
-local x = "I wasn’t being serious lol. I thought you got that and were also playing into it."
+local x = "I wasn’t just playing around."
 pprint("’")
-pprint(string.byte(string.sub(string.sub(x,-75),1,1)))
-local subs = string.sub(x, -75)
-pprint(subs)
+pprint(string.byte(string.sub(string.sub(x,-23),1,1)))
+
+local sub_working = string.sub(x, -21)
+pprint(sub_working)
+
+
+local subs_problem = string.sub(x, -23)
+pprint(subs_problem)
 """
 
 runtime.execute(code)
